@@ -14,6 +14,11 @@ const accountRouter = require("./routes/account.routes");
 const transactionRoutes = require("./routes/transaction.routes");
 
 //use Routes
+
+app.get("/", (req,res) => {     //this is just to see our server is running or not
+    res.send("Ledger service is running");
+})
+
 app.use("/api/auth", authRouter)    //from this url/(end points) whose starting with "/api/auth" those request will be gone authRouter
 app.use("/api/accounts", accountRouter)
 app.use("/api/transactions", transactionRoutes)
